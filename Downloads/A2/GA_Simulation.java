@@ -62,7 +62,7 @@ public class GA_Simulation {
     public void evolve(){
       generationParents = new ArrayList<Individual>(members.subList(0, k));
      ArrayList<Individual> newMembers = new ArrayList<Individual>(n); //to eventually set equal to arraylist of members
-      for (int i = 0; i < n; i++){ //have 2 individuals breed enough times to create n offspring for next generation
+      for (int i = 0; i < n; i++){ //have 2 individuals breed n times to create n offspring for next generation
         List<Integer> pairing =  ThreadLocalRandom.current().ints(0, k).limit(2).boxed().toList();
        //create filler individual arraylists that get from teh members arraylist
         ArrayList<Individual> indv1 = new ArrayList<Individual>();
