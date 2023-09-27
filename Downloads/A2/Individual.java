@@ -117,7 +117,7 @@ public class Individual{
       StringBuilder builder = new StringBuilder(chromosome.size());
       for(Character ch: chromosome) {
         builder.append(ch);
-      }
+      } 
       return builder.toString();
       //return chromosome.stream().map(e->e.toString()).collect(Collectors.joining());
     }
