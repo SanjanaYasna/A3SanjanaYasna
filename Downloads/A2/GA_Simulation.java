@@ -34,7 +34,6 @@ public class GA_Simulation {
             Individual individual = new Individual(8);
             members.add(individual);
         }
-        System.out.println(members);
     }
 
     public void rankPopulation(ArrayList<Individual> pop) {
@@ -68,7 +67,6 @@ public class GA_Simulation {
      ArrayList<Individual> newMembers = new ArrayList<Individual>(n); //to eventually set equal to arraylist of members
       for (int i = 0; i < n; i++){ //have 2 individuals breed enough times to create n offspring for next generation
         List<Integer> pairing =  ThreadLocalRandom.current().ints(0, 15).limit(2).boxed().toList();
-        System.out.println(pairing);
        //create filler individual arraylists that get from teh members arraylist
         ArrayList<Individual> indv1 = new ArrayList<Individual>();
         ArrayList<Individual> indv2 = new ArrayList<Individual>();
@@ -81,6 +79,18 @@ public class GA_Simulation {
       //members now ponts to this new set of members/offspring 
     }
 
+    public void run(GA_Simulation s){
+      s.init();
+      s.rankPopulation(s.members);
+      s.describeGeneration();
+      for (int i = 0; i <r; i ++){
+        s.evolve();
+        s.rankPopulation(s.members);
+        s.describeGeneration();
+      }
+
+    }
+
 
 
     public static void main(String[] args){
@@ -89,6 +99,8 @@ public class GA_Simulation {
         simulation.rankPopulation(simulation.members);
         //System.out.println(simulation.members); //yep, sticks to 100 of those, and it seems to be pretty correct!
         simulation.describeGeneration(); //mumbers descend, so looks good
+
         simulation.evolve();
+        simulation.describeGeneration();
     }
 }

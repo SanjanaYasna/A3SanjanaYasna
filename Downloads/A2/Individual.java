@@ -16,17 +16,8 @@ public class Individual{
         Character ch = randomLetter(4);
         chromosome.add(ch);
       }
-
-     // System.out.println(chromosome);
     }
-    //generate initialize population of cergtani size, and each member of population has 8 chromosome letters
-    //misread instructions, this isnt' needed
-   /*  private Individual(int population){
-      for (int member = 0; member < population; member++){
-        memberChromosomes.add(generateChromosome(8));
-      }
-      System.out.println(memberChromosomes);
-    }*/
+
 
     public int getFitness(){
       ArrayList<Character> input = chromosome; 
@@ -46,12 +37,9 @@ public class Individual{
       return fitness;
     }
     //make offspring
-//Test
     Individual(ArrayList<Individual> parent1, ArrayList<Individual> parent2, double mutationRate, int c_max){
       int randomLength1 = ThreadLocalRandom.current().nextInt(1, parent1.toString().length());
       int randomLength2 = ThreadLocalRandom.current().nextInt(1, parent2.toString().length());
-      System.out.println(randomLength1);
-      System.out.println(randomLength2);
       for (int i = 1; i < randomLength1; i++){
         Character ch = parent1.toString().charAt(i);
         chromosome.add(ch);
@@ -67,7 +55,7 @@ public class Individual{
           chromosome.set(i, randomLetter(4));
         }
       }
-      System.out.println(chromosome);
+     
     
     }
 
@@ -86,11 +74,6 @@ public class Individual{
         return Character.valueOf((char)(65+ThreadLocalRandom.current().nextInt(num_dna_letters)));
     }
 
-    public static void main(String[] args){
-      Individual indv1 = new Individual(8);
-      Individual indv2 = new Individual(8);
-      
-    }
 
 
 }
