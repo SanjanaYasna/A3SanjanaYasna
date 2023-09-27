@@ -11,46 +11,46 @@ your work, please indicate the status of each item
 
 Assignment Points:
 
-_____ 1 pt: `Individual` initial constructor
+_____ 1 pt: `Individual` initial constructor YES
 
-_____ 1 pt: `Individual` two-parent constructor
+_____ 1 pt: `Individual` two-parent constructor YES
 
-_____ 2 pts: `Individual` method to compute fitness
+_____ 2 pts: `Individual` method to compute fitness YES
 
-_____ 1 pt: `GA_Simulation` constructor & fields
+_____ 1 pt: `GA_Simulation` constructor & fields YES
 
-_____ 1 pt: `init` method
+_____ 1 pt: `init` method YES
 
-_____ 2 pts: `evolve` method
+_____ 2 pts: `evolve` method YES
+ 
+_____ 1 pts: `describeGeneration` method YES
 
-_____ 1 pts: `describeGeneration` method
-
-_____ 1 pt: `run` method
+_____ 1 pt: `run` method YES
 
 
 Kudos:
 
-_____ (Kudos!) Exploration of genetic algorithm performance under different parameter settings
+_____ (Kudos!) Exploration of genetic algorithm performance under different parameter settings YES
 
 
 ## General Items:
 
-_____ 4 pts: Programs compile without errors or warnings
+_____ 4 pts: Programs compile without errors or warnings YES
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+_____ 2 pts: Executes fully & consistently without crashing (exception/freeze) YES
 
 _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-  _____ Classes & class members all have Javadoc header comments
+  _____ Classes & class members all have Javadoc header comments YES
 
-  _____ Clear and consistent indentation of bracketed sections
+  _____ Clear and consistent indentation of bracketed sections YES
 
-  _____ Adheres to Java conventions on naming & capitalization
+  _____ Adheres to Java conventions on naming & capitalization YES
 
-  _____ Methods & variables all have clear and accurate names
+  _____ Methods & variables all have clear and accurate names YES
 
-  _____ Methods avoid confusing side effects
+  _____ Methods avoid confusing side effects YES
 
-_____ 1 pt: All required files included with submission (including completed checklist file)
+_____ 1 pt: All required files included with submission (including completed checklist file) YES
 
-_____ 1 pt: readme.md contains your reflection on the assignment
+_____ 1 pt: readme.md contains your reflection on the assignment Y
