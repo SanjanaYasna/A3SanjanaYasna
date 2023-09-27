@@ -71,46 +71,6 @@ public class Individual{
     
     }
 
-      /*for (int i = 0; i < randomLength1; i++){
-        Character ch = parent1.chromosome.get(i);
-        chromosome.add(ch);
-      }
-      for (int i = 0; i < randomLength2; i++){
-        chromosome.add(parent2.get(i));
-      }
-      if (chromosome.size() > c_max){
-        chromosome = new ArrayList<Character>(chromosome.subList(0, c_max));
-      }
-      for (int i = 0; i < chromosome.size(); i ++){
-        if (ThreadLocalRandom.current().nextDouble() < mutationRate){
-          chromosome.set(i, randomLetter(4));
-        }
-      }
-      System.out.println(chromosome);
-    }
-
-    private Individual(ArrayList<Character> parent1, ArrayList<Character> parent2, double mutationRate, int c_max){
-      int randomLength1 = ThreadLocalRandom.current().nextInt(1, parent1.size());
-      int randomLength2 = ThreadLocalRandom.current().nextInt(1, parent2.size());
-
-      for (int i = 0; i < randomLength1; i++){
-        Character ch = parent1.get(i);
-        chromosome.add(ch);
-      }
-      for (int i = 0; i < randomLength2; i++){
-        chromosome.add(parent2.get(i));
-      }
-      if (chromosome.size() > c_max){
-        chromosome = new ArrayList<Character>(chromosome.subList(0, c_max));
-      }
-      for (int i = 0; i < chromosome.size(); i ++){
-        if (ThreadLocalRandom.current().nextDouble() < mutationRate){
-          chromosome.set(i, randomLetter(4));
-        }
-      }
-      System.out.println(chromosome);
-    }*/
-
      /** Expresses the individual's chromosome 
      *  as a String, for display purposes */
     public String toString() {
@@ -127,61 +87,6 @@ public class Individual{
     }
 
     public static void main(String[] args){
-        //System.out.println(individual.generateChromosome(10)); generateChromosome looks normal
-       //System.out.println(individual.chromosome.toString()); chromosome  does display with toString, but you can also just print individual.chromosome
-       /*ArrayList<Character> parent1 = new ArrayList<Character>(
-            Arrays.asList('A',
-                          'B',
-                          'C',
-                          'A',
-                          'D',
-                          'B',
-                          'C',
-                          'A',
-                          'D',
-                          'B',
-                          'C',
-                          'A',
-                          'D',
-                          'B',
-                          'C',
-                          'A',
-                          'D',
-                          'B',
-                          'C',
-                          'A',
-                          'D',
-                          'B',
-                          'C',
-                          'A',
-                          'D',
-                          'B',
-                          'C',
-                          'A',
-                          'D',
-                          'B',
-                          'C',
-                          'A',
-                          'D',
-                          'B',
-                          'C',
-                          'A',
-                          'D'
-                          ));
-      ArrayList<Character> parent2 = new ArrayList<Character>(
-            Arrays.asList('D',
-                          'B',
-                          'B',
-                          'D',
-                          'C'));
-
-      Individual individual = new Individual(Individual parent1.chromsome, Individual parent2, 0.01, 20); //yep, stops at 20 
-      System.out.println(individual.chromosome.size()); //yep, always less than or equal to 20
-       //individual.Individual(individual.memberChromosomes.get(1), individual.memberChromosomes.get(2));
-      System.out.println(parent1);
-      System.out.println(individual.getFitness());
-
-      */
       Individual indv1 = new Individual(8);
       Individual indv2 = new Individual(8);
       
