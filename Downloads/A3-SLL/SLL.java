@@ -1,6 +1,7 @@
 import org.w3c.dom.Node;
-//since nothing is mentioned about error exception handling (like removing from an empty list), certain test cases are of course not accoutned for.
-//tests were passed anyway, so I suppose that's just a given for this assignment
+
+import java.util.EmptyStackException;
+import java.util.Stack;
 public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
     NodeSL<T> head;
     NodeSL<T> tail;
@@ -130,8 +131,10 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
      *  Removes the given item from the head of the list
      *  @return v item removed
      */
-    //since exception handling isn't mentioned, I won't account for the edge case where it's empty
     public T removeFirst(){
+        if (isEmpty()){
+            throw new MissingElementException();
+        }
         NodeSL<T> originalHead = this.head;
         this.head = head.getNext();
         size--;
@@ -143,6 +146,9 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
      *  @return item removed
      */
     public T removeLast(){
+        if (isEmpty()){
+            throw new MissingElementException();
+        }
         if (head == tail){
             T onlyNode = tail.getData();
             head = null;
@@ -170,6 +176,9 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
      */
     //size -- remember
     public T removeAfter(NodeSL<T> here){
+        if (isEmpty()){
+            throw new MissingElementException();
+        }
         NodeSL<T> node = head;
         //if you're removing when there's only one element:
         if (here == null){
@@ -197,7 +206,7 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
     }
 
     /**
-     *  Returns a count of the number of elements in the list
+     *  Returns a count of the number of elemenFts in the list
      *  @return current number of nodes
      */
     public int size(){
@@ -211,7 +220,27 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
      *  @return the copied list
      */
     public SLL<T> subseqByCopy(NodeSL<T> here, int n){
-        return null;
+        SLL<T> seqCopyList = new SLL<T>();
+        seqCopyList.head = null;
+        seqCopyList.tail = null;
+        seqCopyList.size = n;
+        if (seqCopyList.size ==0 || this.size == 0) return seqCopyList;
+        NodeSL<T> node = head;
+        while (node.getNext() != null){
+            if (node == here){
+                int i = n;
+                while(node.getNext() != null && i >0){
+                    seqCopyList.addLast(node.getData());
+                    i--;
+                    node = node.getNext();
+                }
+                if (i == 1){ //if you just have eto copy the tail and that's it
+                    seqCopyList.addLast(tail.getData());
+                }
+        }
+            else node = node.getNext();
+    }
+        return seqCopyList;
     }
 
     /**
@@ -220,6 +249,45 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
      *  @param afterHere  marks the position in this where the new list should go
      */
     public void spliceByCopy(SLL<T> list, NodeSL<T> afterHere){
+        //can insert into itself
+        if (afterHere == list.getHead()){
+            throw new SelfInsertException();
+        }
+        NodeSL<T> node = head;
+        //if you're adding to end
+        if (afterHere == null){
+            NodeSL<T> listNode = list.head;
+            Stack<NodeSL<T>> stack = new Stack<NodeSL<T>>();
+            for (int i = list.size; i > 0; i--){
+                stack.push(listNode);
+                listNode = listNode.getNext();
+            }
+            while (!stack.isEmpty()){
+                this.addFirst(stack.pop().getData());
+            }
+        }
+        else if (afterHere == tail){
+            NodeSL<T> listNode = list.head;
+            while (listNode.getNext() != null){
+                this.addLast(listNode.getData());
+                listNode = listNode.getNext();
+            }
+            this.addLast(list.tail.getData());
+        }
+        else {
+            for (int i = this.size; i > 0; i --){
+                if (node == afterHere){
+                    NodeSL<T> listNode = list.head;
+                    for (int j = list.size; j > 0; j--){
+                        this.addAfter(node, listNode.getData());
+                        node = node.getNext();
+                        listNode = listNode.getNext();
+                    }
+                }
+                else node = node.getNext();
+            }
+        }
+        this.size = this.size + list.size;
 
     }
 
@@ -229,8 +297,31 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
      *  @param toHere  marks the node where the extraction ends
      *  @return  the new list
      */
+
+    //exception for afterhere = tail, cuz then u can't rlly transfer..
     public SLL<T> subseqByTransfer(NodeSL<T> afterHere, NodeSL<T> toHere){
-        return null;
+        SLL<T> extraction = new SLL<T>();
+        if (afterHere == null) {
+            afterHere = this.head;
+            extraction.head = this.head;
+            //if tohere is tail, throw exception for can't splice itself and basically become an empty list
+            //(I assume that's probaby not the intention of this method?)
+            if (toHere == tail){
+                throw new EmptyStackException();
+            }
+            this.head = toHere.getNext();
+            extraction.tail = toHere;
+            toHere.setNext(null);
+            return extraction;
+        }
+        else {
+        extraction.head = afterHere.getNext();
+        if (toHere == this.tail) afterHere.setNext(null);
+        else afterHere.setNext(toHere.getNext());
+        extraction.tail = toHere; 
+        toHere.setNext(null);
+        return extraction; 
+        }
     }
 
     /** 
@@ -240,7 +331,23 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
      *  @param afterHere  Marks the place where the new elements are inserted
      */
     public void spliceByTransfer(SLL<T> list, NodeSL<T> afterHere){
-       
+        //can insert into itself
+        if (afterHere == list.getHead()){
+            throw new SelfInsertException();
+        }
+        if (afterHere ==null){
+            list.tail.setNext(this.head);
+            this.head = list.head;
+            list.head = null;
+            list.tail = null;
+        }
+        else{
+            NodeSL<T> endAttachment = afterHere.getNext();
+            afterHere.setNext(list.head);
+            list.tail.setNext(endAttachment);
+            list.head = null;
+            list.tail = null;
+        }
     }
  
 

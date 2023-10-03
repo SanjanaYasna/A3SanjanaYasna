@@ -485,7 +485,6 @@ public class SLLTest {
             // System.out.println("[Self Insert Exception 2]");
             String[] ab = { "A", "B" };
             SLL<String> list = TestMethods.makeSLL(ab);
-
             Assert.assertThrows("self spliceByTransfer",
                     SelfInsertException.class,
                     () -> {
