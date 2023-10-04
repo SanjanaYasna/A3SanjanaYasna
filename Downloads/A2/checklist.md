@@ -39,7 +39,7 @@ _____ 4 pts: Programs compile without errors or warnings YES
 
 _____ 2 pts: Executes fully & consistently without crashing (exception/freeze) YES
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+_____ 2 pt: Complies with style guidelines (missing items 1 pt each): YES
 
   _____ Classes & class members all have Javadoc header comments YES
 
@@ -53,4 +53,4 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
 _____ 1 pt: All required files included with submission (including completed checklist file) YES
 
-_____ 1 pt: readme.md contains your reflection on the assignment Y
+_____ 1 pt: readme.md contains your reflection on the assignment YES
