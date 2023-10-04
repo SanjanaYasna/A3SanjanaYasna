@@ -38,18 +38,11 @@ public class SLL_Iterator<T> implements Phase5SLL_Iterator<T> {
     public T next() {
         if (hasNext()){
             T node = currNode.getNext().getData();
-            prevNode = currNode;
             currNode = currNode.getNext();
+            prevNode = prevNode.getNext();
             return node;
         }
         else throw new NullPointerException();
-        /*if (hasNext()){
-            T node = currNode.getData();
-            prevNode = currNode;
-            currNode = currNode.getNext();
-            return node;
-        }
-        else throw new NullPointerException();*/
     }
 
     /**
@@ -87,9 +80,6 @@ public class SLL_Iterator<T> implements Phase5SLL_Iterator<T> {
         else {
             list.addAfter(currNode, data);
             this.next();
-            /*NodeSL<T> newNode = new NodeSL<T>(data, null);
-            currNode = this.tail;
-            prevNode.setNext(currNode);*/
         }     
         }
     

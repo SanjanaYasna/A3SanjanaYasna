@@ -11,41 +11,42 @@ your work, please indicate the status of each item
 
 ## Assignment Points:
 
-_____ 1 pt: Phase 1 methods implemented for singly linked list
+_____ 1 pt: Phase 1 methods implemented for singly linked list YES
 
-_____ 1 pt: Passes all phase 1 tests for singly linked list
+_____ 1 pt: Passes all phase 1 tests for singly linked list YES
 
-_____ 1 pt: Phase 2 methods implemented for singly linked list
+_____ 1 pt: Phase 2 methods implemented for singly linked list YES
 
-_____ 1 pt: Passes all phase 2 tests for singly linked list
+_____ 1 pt: Passes all phase 2 tests for singly linked list YES
 
-_____ 1 pt: Phase 3 methods implemented efficiently for singly linked list
+_____ 1 pt: Phase 3 methods implemented efficiently for singly linked list YES
 
-_____ 1 pt: Passes all phase 3 tests for singly linked list
+_____ 1 pt: Passes all phase 3 tests for singly linked list YES
 
-_____ 1 pts: Program throws appropriate exceptions (with informative error messages)
+_____ 1 pts: Program throws appropriate exceptions (with informative error messages) YES
 
-_____ 1 pt: Passes all phase 4 tests for singly linked list
+_____ 1 pt: Passes all phase 4 tests for singly linked list YES
 
-_____ 1 pt: Iterator class implemented for singly linked list
+_____ 1 pt: Iterator class implemented for singly linked list YES
 
-_____ 1 pt: Passes all phase 5 tests for singly linked list
+_____ 1 pt: Passes all phase 5 tests for singly linked list YESN'T (except for remove)
 
 
 ## Kudos:
 
 _____ (kudos) New version of SLL that implements an iterator class and hide details of Node as a private nested class.
+maybe one day
 
 
 
 
 ## General Items:
 
-_____ 4 pts: Program compiles without errors or warnings
+_____ 4 pts: Program compiles without errors or warnings YES (the onlyl warnings are from the test files)
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+_____ 2 pts: Executes fully & consistently without crashing (exception/freeze) YES
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+_____ 2 pt: Complies with style guidelines (missing items 1 pt each): YES
 
       _____ Classes & class members all have Javadoc header comments
 
@@ -57,6 +58,6 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       _____ Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission
+_____ 1 pt: All required files included with submission YES
 
-_____ 1 pt: readme.md contains reflection on the assignment
+_____ 1 pt: readme.md contains reflection on the assignment YES
