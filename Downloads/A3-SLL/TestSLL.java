@@ -5,25 +5,25 @@ public class TestSLL implements Phase1SLL{
 
   @Override
   public NodeSL getHead() {
-    // TODO Auto-generated method stub
+    
     throw new UnsupportedOperationException("Unimplemented method 'getHead'");
   }
 
   @Override
   public NodeSL getTail() {
-    // TODO Auto-generated method stub
+    
     throw new UnsupportedOperationException("Unimplemented method 'getTail'");
   }
 
   @Override
   public boolean isEmpty() {
-    // TODO Auto-generated method stub
+    
     throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
   }
 
   @Override
   public void addFirst(Object v) {
-    // TODO Auto-generated method stub
+    
     throw new UnsupportedOperationException("Unimplemented method 'addFirst'");
   }
   // /** checks the form of a SLL for errors */

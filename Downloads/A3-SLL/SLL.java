@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 import java.util.EmptyStackException;
 import java.util.Stack;
 public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {

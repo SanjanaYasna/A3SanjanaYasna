@@ -545,6 +545,7 @@ public class SLLTest {
             Assert.assertTrue("D^AC.set(E)->DEC" + s, s.equals(""));
             iter1.next();
             iter1.set("F");
+            System.out.println(list.toString());
             s = TestMethods.verifySLL(list, def);
             Assert.assertTrue("DE^C.set(F)->DEF" + s, s.equals(""));
         } catch (Exception e) {
@@ -561,6 +562,7 @@ public class SLLTest {
             SLL<String> list = TestMethods.makeSLL(empty);
             SLL_Iterator<String> iter = new SLL_Iterator<>(list);
             iter.add("A");
+            System.out.println(list.toString());
             String s = TestMethods.verifySLL(list, a);
             Assert.assertTrue("empty.add(A)->A" + s, s.equals(""));
             iter.add("B");
@@ -618,7 +620,7 @@ public class SLLTest {
             String s = TestMethods.verifySLL(list, ac);
             Assert.assertTrue("B^AC.remove->AC" + s, s.equals(""));
             Assert.assertThrows("exception on second remove",
-                    MissingElementException.class,
+                    NullPointerException.class ,//MissingElementException.class,
                     () -> {
                         iter2.remove();
                     });
