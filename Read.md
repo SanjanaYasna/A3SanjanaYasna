@@ -1,0 +1,4 @@
+# A3SanjanaYasna
+## Quick note: Please forgive me if this assignment was submitted officially around an hour after teh due time. I suppose as long as it's before class, it's forgiveable?
+
+This project was a great way to cover linked list interfaces. I would’ve appreciated clearer directions as to how the iterator java class should’ve been done, as I wasn’t aware that we were allowed to directly call SLL list methods and thought we had to use only the NodeSL methods. Other than that, the assignment really got me to get better at thinking about test cases so as to pass the Junit tests. The iterator class was by far the hardest to write since it took a lot of thinking as to which nodes to keep track off to make the other methods as convenient as possible. The solution for some of the methods were a lot simpler than I thought, although the remove method was a challenge I can’t do properly. Keep up the interesting work! 
